@@ -1,0 +1,24 @@
+# Python cache.
+__pycache__/
+
+# Compiled python code.
+*.pyc
+
+# Rope database.
+objectdb
+
+# Mercurial subrepos.
+pythonlib/common/ImageReconstruction/
+
+# Settings for labscript suite programs.
+app_saved_configs/*
+
+# Configuration files for M-LOOP optimizations.
+analysislib/common/analysislib_mloop/*.ini
+user_devices/Rydberg/PTSControl/.DS_Store
+user_devices/Rydberg/AD9959ArduinoComm/AD9959_v2_MLP/.DS_Store
+user_devices/Rydberg/AD9959ArduinoComm/.DS_Store
+user_devices/Rydberg/.DS_Store
+user_devices/.DS_Store
+labscriptlib/.DS_Store
+.DS_Store

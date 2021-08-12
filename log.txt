@@ -1,0 +1,10 @@
+SpinCore Technologies, Inc. SpinAPI ver. 20171214
+Logfile created: Thu Jul 15 08:39:30 2021
+
+Markers: (I) info, (W) warning, (E) error.
+
+================================================================================================
+    TIME     FUNCTION                     MESSAGE                      
+================================================================================================
+(I) 08:39:30 pb_start:488                pb_start():
+(I) 08:39:30 pb_outp:1543                pb_outp: addr 1, data 0. Using the AMCC protocol.
