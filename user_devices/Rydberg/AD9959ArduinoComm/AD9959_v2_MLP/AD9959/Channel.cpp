@@ -63,6 +63,7 @@ void Channel::checkStep(AD9959 DDS){
       DDS.selectChannel(register_channel);
       DDS.setFreq(freq_list[counter_channel]);
     }  
+// determine what logic to use here if the user jumps frequency too many times. Right now we just stay at the last frequency
 //    else{
 //      counter_channel = 0;
 //      DDS.selectChannel(register_channel);

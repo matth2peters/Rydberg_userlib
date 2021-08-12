@@ -71,30 +71,6 @@ void setup()
 
 void loop() {
 
-//  delay(500);
-//  current_freq_list[0] = {1000000};
-//  current_freq_list[1] = {2000000};
-//  current_freq_list[2] = {3000000};
-//  channel_list[flag].setFreqList(3, current_freq_list, DDS);
-//  delay(1000);
-//  channel_list[flag].checkStep(DDS);
-//  delay(1000);
-//  channel_list[flag].checkStep(DDS);
-//  delay(1000);
-
-  //current_freq_list[0] = {1000000};
-  //channel_list[0].setFreqList(1, current_freq_list, DDS);
-  //channel_list[1].setFreqList(1, current_freq_list, DDS);
-  //
-  //unsigned long inputLW[8] = {1000000, 5000000, 10000, 1, 10000, 1, 500, 0};
-  //DDS.linearSweepP(inputLW);
-  //
-  //current_freq_list[0] = {2000000};
-  //channel_list[0].setFreqList(1, current_freq_list, DDS);
-  //channel_list[1].setFreqList(1, current_freq_list, DDS);
-
-  //delay(500);
-//
   if (Serial.available() >= 3) {
     // figure out which of the channels we will be setting
     flag = Serial.read();
