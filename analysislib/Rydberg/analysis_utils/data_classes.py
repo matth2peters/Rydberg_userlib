@@ -59,8 +59,6 @@ OD_TO_ATOM_NUMBER = OD_TO_ATOM_NUMBER_CORRECTION * BASLER_PIXEL_SIZE**2 / SIGMA_
 # is to convert K to uK.
 TEMPERATURE_COEFF = BASLER_PIXEL_SIZE**2 * (M87 / scipy.constants.k) * 1e6
 
-
-
 def group_by_function(object_list, grouping_function, *args, **kwargs):
     """Group objects by the results of applying grouping_function to them.
 
@@ -291,7 +289,8 @@ class Shot(Run):
         super().__init__(h5_path)
 
         # Set 'shot_results' as the default group when saving results.
-        #self.set_group('shot_results')
+        self._create_group_if_not_exists('shot_results')
+        self.set_group('shot_results')
 
         # Set self.globals. We'll use runmanager.get_shot_globals() rather than
         # the inherited Run.get_globals() because the former does a better job
@@ -320,6 +319,8 @@ class Shot(Run):
         # can revert back to the commented-out code above that actually calls
         # get_nested_dict_from_shot(), though things will take longer to run.
         root_attributes = self.get_attrs('/')
+        self._create_group_if_not_exists('shot_results')
+        self.set_group('shot_results')
 
         # sequence
         seq_id = _ensure_str(root_attributes['sequence_id'])
@@ -515,7 +516,7 @@ class Shot(Run):
         self.x0, self.y0, self.w, self.h = routine_storage.image_roi
         self.save_result("roi", routine_storage.image_roi)
         self.processed_image_roi = self.processed_image[int(self.x0):int(self.x0+self.w), int(self.y0):int(self.y0+self.h)]
-        self.save_result_array("processed_image", self.processed_image)
+        #self.save_result_array("processed_image", self.processed_image)
 
         # Get crossections from the ROI to fit; save them
         horizontal_crossection = self.processed_image_roi.sum(axis=1)/self.processed_image_roi.shape[1]

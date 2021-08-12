@@ -21,6 +21,4 @@ In theory, multiple DDSs can be controlled by the same arduino by using a differ
 PWR_DWN -> Add jumper
 
 
-The base arduino code was written by Aditya and I have completely rewritten it to put in some comments/require fewer inputs/make it object-oriented/implement overall improvements.   
-
-The organization is typical of user-added labscript devices, except there is an extra folder AD9959_v2_MLP and an extra file ArduinoCommPython3Example.py. The folder contains code which should be uploaded to the arduino, and the python files contains code to talk directly to the arduino outside of labscript for testing purposes. Using this code, you can check that the serial connection is working correctly.
+The organization is typical of user-added labscript devices, except there is an extra folder AD9959_v2_MLP. The folder contains code which should be uploaded to the arduino.
