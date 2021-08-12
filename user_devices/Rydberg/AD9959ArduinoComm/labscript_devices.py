@@ -194,8 +194,6 @@ class AD9959ArduinoTriggerAnalog(AnalogOut, Trigger):
         if abs(trigger_time- self.prev_trigger_time) < self.min_trigger_pulse_width:
             raise Exception("Invalid triggering sequence. Please ensure the times between triggers are larger than the minimum.")
 
-        if self.times_triggered > num_frequencies:
-            raise Exception("Invalid triggering sequence. Please ensure you do not trigger the arduino more times than the number of frequencies you set minus 1")
         self.prev_trigger_time = trigger_time
         self.constant(trigger_time,3.3)
         self.constant(trigger_time+self.min_trigger_pulse_width/2,0)
